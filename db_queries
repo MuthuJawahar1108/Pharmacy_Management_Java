@@ -1,0 +1,30 @@
+create database pharmacy;
+use pharmacy;
+create table login(id int,username varchar(50),password varchar(100));
+select * from login;
+insert into login values(100,"Srikanth","Srikanth");
+insert into login values(101,"Muthu","Muthu");
+insert into login values(102,"Ajai","Ajai");
+insert into login values(103,"Mukilan","Mukilan");
+insert into login values(104,"Gladwin","Gladwin");
+insert into login values(105,"Dhilip","Dhilip");
+create table medicines(
+id int primary key auto_increment,
+ name varchar(100),
+ compname varchar(100),
+ price decimal(10,2),
+ stock integer,
+ type varchar(100)
+);
+select * from medicines;
+CREATE TABLE orders (
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ userid INT,
+ name VARCHAR(100),
+ phone VARCHAR(20),
+ mid INT,
+ quantity INT,
+ total DECIMAL(10, 2),
+ FOREIGN KEY (mid) REFERENCES medicines(id)
+);
+select * from orders;
